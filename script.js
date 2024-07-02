@@ -22,6 +22,10 @@ function initializeGapiClient() {
     });
 }
 
+function handleAuthClick() {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
 function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
         listRatings();
