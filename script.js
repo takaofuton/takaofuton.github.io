@@ -1,4 +1,4 @@
-const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID'; // GoogleスプレッドシートのIDを設定
+const SPREADSHEET_ID = '1R_s7TZ46VblZZ3fLz_89mLPIafU8wikX7NPzQJlg5FU'; // GoogleスプレッドシートのIDを設定
 const CLIENT_ID = 'YOUR_CLIENT_ID'; // OAuth 2.0 クライアントIDを設定
 const API_KEY = 'YOUR_API_KEY'; // APIキーを設定
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
