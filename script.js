@@ -1,15 +1,9 @@
-// script.js
-require('dotenv').config(); // dotenvパッケージを使用して.envファイルの内容を読み込む
-const API_KEY = process.env.API_KEY;
-const  CLIENT_ID = process.env.CLIENT_ID;
-const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
+
+// 必要なAPIキーとクライアントIDを直接記述
+const API_KEY = 'YOUR_API_KEY';
+const CLIENT_ID = 'YOUR_CLIENT_ID';
+const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID';
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
-
-
-
-
-// ここから先のコードでapiKeyやclientId、spreadsheetIdを使用する
-
 
 // Google APIの初期化と認証
 function gapiLoaded() {
@@ -44,7 +38,7 @@ function listRatings() {
         const range = response.result;
         const ratingsDiv = document.getElementById('ratings');
         ratingsDiv.innerHTML = '';
-        if (range.values.length > 0) {
+        if (range.values && range.values.length > 0) {
             for (let i = 0; i < range.values.length; i++) {
                 const row = range.values[i];
                 ratingsDiv.innerHTML += `<p>${row[0]}: ${row[1]}</p>`;
@@ -66,7 +60,7 @@ function updateRating(player1, player2, result) {
         let player1Data = { name: player1, rating: 1000 };
         let player2Data = { name: player2, rating: 1000 };
 
-        if (range.values.length > 0) {
+        if (range.values && range.values.length > 0) {
             for (let i = 0; i < range.values.length; i++) {
                 const row = range.values[i];
                 if (row[0] === player1) {
@@ -121,4 +115,5 @@ function submitResult() {
     }
 }
 
+// Google APIクライアントライブラリのロード
 gapi.load('client:auth2', gapiLoaded);
