@@ -1,8 +1,8 @@
 
 // 必要なAPIキーとクライアントIDを直接記述
-const API_KEY = 'YOUR_API_KEY';
-const CLIENT_ID = 'YOUR_CLIENT_ID';
-const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID';
+const API_KEY = 'AIzaSyCFIrl46FIo6EjYoqWfqsO52AZuZbbutAs';
+const CLIENT_ID = '76711092286-n0s2917gdtna2uj9d58s83l5f09u6v56.apps.googleusercontent.com';
+const SPREADSHEET_ID = '1R_s7TZ46VblZZ3fLz_89mLPIafU8wikX7NPzQJlg5FU';
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
 
 // Google APIの初期化と認証
