@@ -5,6 +5,7 @@ const CLIENT_ID = '76711092286-n0s2917gdtna2uj9d58s83l5f09u6v56.apps.googleuserc
 const SPREADSHEET_ID = '1R_s7TZ46VblZZ3fLz_89mLPIafU8wikX7NPzQJlg5FU';
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
 
+
 // Google APIの初期化と認証
 function gapiLoaded() {
     gapi.load('client:auth2', initializeGapiClient);
@@ -28,9 +29,10 @@ function handleAuthClick() {
 
 function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
+        document.getElementById('auth-button').style.display = 'none';
         listRatings();
     } else {
-        gapi.auth2.getAuthInstance().signIn();
+        document.getElementById('auth-button').style.display = 'block';
     }
 }
 
