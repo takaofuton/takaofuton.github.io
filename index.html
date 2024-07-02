@@ -21,6 +21,7 @@
         <option value="lose">Player 2 Wins</option>
     </select>
     
+    <button id="auth-button" onclick="handleAuthClick()">Sign in with Google</button>
     <button onclick="submitResult()">Submit Result</button>
     
     <h2>Player Ratings</h2>
@@ -28,5 +29,16 @@
     
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Service Workerの登録
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(function(error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    </script>
 </body>
 </html>
